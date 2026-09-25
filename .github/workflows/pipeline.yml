@@ -49,14 +49,4 @@ jobs:
         run: python tourism_project/model_building/train_model.py
 
 
-  deploy-hosting:
-    runs-on: ubuntu-latest
-    needs: [model-traning,data-prep,register-dataset]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install Dependencies
-        run: pip install -r tourism_project/deployment/requirements.txt
-      - name: Push files to Frontend Hugging Face Space
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python tourism_project/deployment/upload_to_hf_space.py
+  
