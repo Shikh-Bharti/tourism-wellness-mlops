@@ -1,0 +1,6 @@
+pandas
+numpy
+scikit-learn
+huggingface_hub
+mlflow
+joblib
